@@ -1,4 +1,4 @@
-let time = 249;
+let time = 199;
 let cam;
 let forms = [];
 let widthRec = 200;
@@ -18,7 +18,7 @@ function draw() {
   time += 1;
 
   // add new rect
-  if (time % 250 === 0) {
+  if (time % 200 === 0) {
     let _form = { x: 0, y: 0 };
     forms.unshift(_form);
   }
@@ -29,8 +29,7 @@ function draw() {
       //update coor
       forms[i].x += 1;
       // rebound function
-      forms[i].y =
-        height - widthRec - abs(cos(forms[i].x * 0.05) * (200 - i)) * (1000 / forms[i].x);
+      forms[i].y = height + 10 - widthRec - abs(cos(time * 0.05) * 500) * (1000 / time);
       //rect(forms[i].x, forms[i].y, widthRec, widthRec);
 
       //draw image cam
